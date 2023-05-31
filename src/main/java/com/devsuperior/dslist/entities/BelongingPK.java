@@ -15,15 +15,15 @@ public class BelongingPK {
 	private Game game;
 	
 	@ManyToOne
-	@JoinColumn(name = "game_list")
-	private GameList gamelist;
+	@JoinColumn(name = "list_id")
+	private GameList list;
 	
 	public BelongingPK() {
 	}
 	
-	public BelongingPK(Game game, GameList gamelist) {
+	public BelongingPK(Game game, GameList list) {
 		this.game = game;
-		this.gamelist = gamelist;
+		this.list = list;
 	}
 	
 	public Game getGame() {
@@ -33,16 +33,16 @@ public class BelongingPK {
 		this.game = game;
 	}
 	public GameList getGamelist() {
-		return gamelist;
+		return list;
 	}
 	public void setGamelist(GameList gamelist) {
-		this.gamelist = gamelist;
+		this.list = gamelist;
 	}
 
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(game, gamelist);
+		return Objects.hash(game, list);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -53,7 +53,7 @@ public class BelongingPK {
 		if (getClass() != obj.getClass())
 			return false;
 		BelongingPK other = (BelongingPK) obj;
-		return Objects.equals(game, other.game) && Objects.equals(gamelist, other.gamelist);
+		return Objects.equals(game, other.game) && Objects.equals(list, other.list);
 	}
 	
 	
